@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: #f0f5ff;
+    color: #0f172a;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* ---------- inputs ---------- */
+  .hiq-input {
+    @apply w-full rounded-xl border border-blue-100 bg-blue-50/40 px-3.5 py-2.5
+           text-sm text-slate-800 outline-none placeholder-slate-400
+           transition-all duration-150
+           focus:border-brand-600 focus:bg-white focus:ring-2 focus:ring-brand-600/10;
+  }
+
+  /* ---------- primary button ---------- */
+  .hiq-btn {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-xl bg-brand-600 px-5 py-2.5
+           text-sm font-semibold text-white
+           shadow-sm transition-all duration-150
+           hover:bg-brand-700 active:scale-[.98]
+           disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  /* ---------- ghost / secondary button ---------- */
+  .hiq-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-xl border border-blue-200 bg-white px-5 py-2.5
+           text-sm font-semibold text-brand-900
+           transition-all duration-150
+           hover:border-brand-400 hover:bg-blue-50
+           active:scale-[.98];
+  }
+
+  /* ---------- card ---------- */
+  .hiq-card {
+    @apply rounded-2xl border border-blue-100 bg-white shadow-card
+           transition-all duration-200;
+  }
+
+  /* ---------- section label ---------- */
+  .hiq-label {
+    @apply block text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-1.5;
+  }
+
+  /* ---------- badge ---------- */
+  .hiq-badge {
+    @apply inline-block rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide;
+  }
+}
+
+/* thin scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
